@@ -1,36 +1,32 @@
-import {test, expect} from '@playwright/test';
-
-import {LoginPage} from '../pages/LoginPage';
+import { test, expect } from '../fixtures/loginfixture';
 
 const logindata= require ('../testdata/testdata.json');
 
-
-for (const data of logindata)
-
+for (const data of logindata) 
 {
+test(`firsttest with ${data.username}`, async ({fixturelogin}) => {
 
-test(`firsttest with ${data.username}`, async ({ page }) => {
+// await page.goto("https://practicetestautomation.com/practice-test-login/");
 
+//const loginPage = new LoginPage(page);
 
-await page.goto("https://practicetestautomation.com/practice-test-login/");
+await fixturelogin.loginAction(data.username, data.password);
 
-const loginPage = new LoginPage(page);
-
-await loginPage.loginAction(data.username, data.password);
+fixturelogin.page.on('request', request => {
+  console.log(request.method(),"     " + request.url());
+});
 
 if(data.expectedType=='success')
 {
- await expect(page.locator("//h1[text()='Logged In Successfully']")).toHaveText(data.expectedValue);
+ await expect(fixturelogin.page.locator("//h1[text()='Logged In Successfully']")).toHaveText(data.expectedValue);
 
 }
 else if (data.expectedType=='failure')
-
 {
-    await expect(page.locator("//div[text()='Your username is invalid!']")).toHaveText(data.expectedValue);
+    await expect(fixturelogin.page.locator("//div[text()='Your username is invalid!']")).toHaveText(data.expectedValue);
 }
 
-
-await page.waitForTimeout(5000);
+await fixturelogin.page.waitForTimeout(5000);
 
 })
 
