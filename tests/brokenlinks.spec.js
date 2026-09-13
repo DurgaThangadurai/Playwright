@@ -2,12 +2,13 @@ import { test, expect} from '@playwright/test'
 
 test('broken links', async ({page, request}) => {
 
-    test.setTimeout(120000);
+  //  test.setTimeout(120000);
 
+await page.goto("https://www.flipkart.com", { waitUntil: 'domcontentloaded', timeout: 60000 });
 
-await page.goto("https://www.amazon.in", { waitUntil: 'domcontentloaded' });
+//await page.goto("https://www.makemytrip.com", { waitUntil: 'commit', timeout: 60000 });
 
-await page.waitForTimeout(5000);
+// await page.waitForTimeout(5000);
 
 const totallinks = await page.locator('a')
 
@@ -22,10 +23,9 @@ for (let i=0;i<limit;i++)
 
 	const href=await totallinks.nth(i).getAttribute('href')
 
+  console.log("\n")
 
-   /* if (!href) {
-      continue;
-    }*/
+
 
     if (!href || href.startsWith('#') ||
         href.startsWith('mailto:') ||
@@ -34,8 +34,6 @@ for (let i=0;i<limit;i++)
         {
                  continue;
         }
-
-
 
     const url = new URL(href, page.url()).href;
 

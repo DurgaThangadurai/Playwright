@@ -68,9 +68,10 @@ reporter: [
 
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
-    screenshot: 'on',
-    video: 'on',
+    trace: 'off',
+    screenshot: 'off',
+    video: 'off',
+    headless: false
 
   },
 
@@ -79,7 +80,7 @@ reporter: [
     {
       name: 'chromium',
       //use: { ...devices['Desktop Chrome'] },
-    }
+       }
 
    /* {
       name: 'firefox',
