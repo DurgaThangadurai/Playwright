@@ -1,0 +1,49 @@
+- generic [active] [ref=f3e1]:
+  - link "Press \"Enter\" to skip to content" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main-container"
+  - generic [ref=f3e4]:
+    - banner [ref=f3e5]:
+      - generic [ref=f3e6]:
+        - generic:
+          - navigation
+      - link [ref=f3e10] [cursor=pointer]:
+        - /url: https://practicetestautomation.com/
+        - img "Practice Test Automation" [ref=f3e11]
+      - navigation [ref=f3e16]:
+        - navigation [ref=f3e17]:
+          - list [ref=f3e18]:
+            - listitem [ref=f3e19]:
+              - link "Home" [ref=f3e20] [cursor=pointer]:
+                - /url: https://practicetestautomation.com/
+            - listitem [ref=f3e21]:
+              - link "Practice" [ref=f3e22] [cursor=pointer]:
+                - /url: https://practicetestautomation.com/practice/
+            - listitem [ref=f3e23]:
+              - link "Courses" [ref=f3e24] [cursor=pointer]:
+                - /url: https://practicetestautomation.com/courses/
+            - listitem [ref=f3e25]:
+              - link "AI Workshop" [ref=f3e26] [cursor=pointer]:
+                - /url: https://practicetestautomation.com/workshop
+            - listitem [ref=f3e27]:
+              - link "Blog" [ref=f3e28] [cursor=pointer]:
+                - /url: https://practicetestautomation.com/blog/
+            - listitem [ref=f3e29]:
+              - link "Contact" [ref=f3e30] [cursor=pointer]:
+                - /url: https://practicetestautomation.com/contact/
+    - main [ref=f3e31]:
+      - article [ref=f3e34]:
+        - heading "Logged In Successfully" [level=1] [ref=f3e36]
+        - generic [ref=f3e37]:
+          - paragraph [ref=f3e38]:
+            - strong [ref=f3e39]: Congratulations student. You successfully logged in!
+          - link "Log out" [ref=f3e43] [cursor=pointer]:
+            - /url: https://practicetestautomation.com/practice-test-login/
+          - paragraph
+    - contentinfo:
+      - generic [ref=f3e45]:
+        - text: © Copyright 2020
+        - link "Practice Test Automation." [ref=f3e46] [cursor=pointer]:
+          - /url: https://practicetestautomation.com/
+        - text: All rights reserved |
+        - link "Privacy Policy" [ref=f3e47] [cursor=pointer]:
+          - /url: https://practicetestautomation.com/privacy-policy/
