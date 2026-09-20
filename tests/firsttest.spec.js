@@ -4,7 +4,7 @@ const logindata= require ('../testdata/testdata.json');
 
 for (const data of logindata) 
 {
-test(`firsttest with ${data.username}`, async ({fixturelogin}) => {
+test(`LoginTest with ${data.username}`, async ({fixturelogin}) => {
 
 // await page.goto("https://practicetestautomation.com/practice-test-login/");
 
@@ -26,7 +26,7 @@ else if (data.expectedType=='failure')
     await expect(fixturelogin.page.locator("//div[text()='Your username is invalid!']")).toHaveText(data.expectedValue);
 }
 
-await fixturelogin.page.waitForTimeout(5000);
+//await fixturelogin.page.waitForTimeout(5000);
 
 })
 

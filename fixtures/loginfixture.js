@@ -13,6 +13,6 @@ export const test = base.extend({
         await use(fixturelogin);
     } 
 
-});
+}); 
 
 export { expect } from '@playwright/test';

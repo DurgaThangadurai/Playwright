@@ -3,16 +3,18 @@ import { test, expect} from '@playwright/test'
 test('webtable', async ({page}) => {
 
 
-await page.goto("https://practicetestautomation.com/practice-test-table/", {waitUntil:'domcontentloaded'})
-
-
-const rows= await page.locator("#courses_table tr")
-
-const cols=await page.locator("#courses_table th")
+await page.goto("https://assertqa.com/practice/webtables", {waitUntil:'domcontentloaded'})
 
 let data = ""
 let textFound = false;
-const searchtext="Selenium with Java"
+const searchtext="Durga"
+
+while(true)
+{
+
+const rows= await page.locator("#employees-table tr")
+
+const nextButton = page.locator('//button[@data-cy="pagination-next"]');
 
 for (let i=0;i<await rows.count();i++)
 {
@@ -21,8 +23,21 @@ for (let i=0;i<await rows.count();i++)
     if (data.trim().includes(searchtext))
     {
         textFound = true;
-        console.log("Text found in "+ i +"th row:", data.trim());
+        console.log("Text found in "+ (i+1) +"th row:", data.trim());
     }
+}
+
+    if (textFound) 
+    {
+      break;
+    }
+
+    if (await nextButton.isDisabled()) 
+    {
+      break;
+    }
+
+   await nextButton.click();
 
 }
 

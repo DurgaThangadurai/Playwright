@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Covered Button Practice</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f2f2f2;
+    }
+
+    .container {
+      position: relative;
+      width: 500px;
+      margin: auto;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    button {
+      padding: 15px 35px;
+      font-size: 18px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+
+    /*
+      This element is placed exactly over the button.
+      It is transparent, so the button is still visible.
+    */
+    .cover {
+      position: absolute;
+      top: 108px;
+      left: 185px;
+      width: 150px;
+      height: 55px;
+      background: rgba(255, 0, 0, 0.05);
+      z-index: 10;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h2>Payment Form</h2>
+
+    <p>Click the Pay Now button.</p>
+
+    <button id="payButton">Pay Now</button>
+
+    <!-- Another element covering the button -->
+    <div class="cover" id="coverElement"></div>
+
+    <p id="message" class="success"></p>
+
+  </div>
+
+  <script>
+    document
+      .getElementById("payButton")
+      .addEventListener("click", function () {
+        document.getElementById("message").textContent =
+          "Payment completed successfully!";
+      });
+  </script>
+
+</body>
+</html>

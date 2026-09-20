@@ -25,6 +25,7 @@ for (let i=0;i<limit;i++)
 
   console.log("\n")
 
+  console.log(href)
 
 
     if (!href || href.startsWith('#') ||
