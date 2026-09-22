@@ -9,7 +9,6 @@ this.username =  page.locator("#username");
 this.password =  page.locator("#password");
 this.login=  page.locator(".btn");
 
-
 }
 
 async loginAction(username, password)

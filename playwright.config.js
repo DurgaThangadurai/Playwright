@@ -46,18 +46,15 @@ export default defineConfig({
 
 reporter: [
     ['list'],
-    ['allure-playwright']
-  ],
 
+    ['allure-playwright'],
+ 
+    ['junit', { outputFile: 'results.xml' }],
 
-
-
-
-  /* reporter: [
-        
     ['html', { outputfolder: 'test-report', open : 'always'}]
-  
-  ],*/
+
+ ],
+
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -66,8 +63,8 @@ reporter: [
 
    // baseURL: environments[env].baseURL,
 
-
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+   
     trace: 'off',
     screenshot: 'off',
     video: 'off',

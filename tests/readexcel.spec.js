@@ -1,10 +1,16 @@
 import { test, expect } from '../fixtures/loginfixture';
 
-const logindata= require ('../testdata/testdata.json');
+import {excelRead} from '../utils/filereader.js'
+
+const filepath='./testdata/testdata.xlsx'
+
+const logindata = excelRead(filepath);
+
+console.log(logindata);
 
 for (const data of logindata) 
 {
-test(`LoginTest with ${data.username}`, async ({fixturelogin}) => {
+test(`Excel Login Test with ${data.username}`, async ({fixturelogin}) => {
 
 //await page.goto("https://practicetestautomation.com/practice-test-login/");
 

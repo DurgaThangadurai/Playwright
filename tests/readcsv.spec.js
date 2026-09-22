@@ -1,10 +1,16 @@
 import { test, expect } from '../fixtures/loginfixture';
 
-const logindata= require ('../testdata/testdata.json');
+import {csvRead} from '../utils/filereader.js'
+
+const filepath='./testdata/testdata.csv'
+
+const logindata = csvRead(filepath);
+
+console.log(logindata);
 
 for (const data of logindata) 
 {
-test(`LoginTest with ${data.username}`, async ({fixturelogin}) => {
+test(`CSV Login Test with ${data.username}`, async ({fixturelogin}) => {
 
 //await page.goto("https://practicetestautomation.com/practice-test-login/");
 

@@ -1,0 +1,3 @@
+username,password,expectedType,expectedValue
+student,Password123,success,Logged In Successfully
+invalidUser,wrongPass,failure,Your username is invalid!
