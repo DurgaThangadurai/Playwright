@@ -17,6 +17,7 @@ export function csvRead(filepath)
     const csvdata=fs.readFileSync(filepath, 'utf-8')
     const {parse} = require ('csv-parse/sync')
     const logindata= parse(csvdata, {delimiter: ",", columns: true, skip_empty_lines:true })
+   
     return logindata
 
 }

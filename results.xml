@@ -1,2 +1,11 @@
-<testsuites id="" name="" tests="0" failures="0" skipped="0" errors="0" time="0.024399">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="17.715172">
+<testsuite name="AddToCartScenario.spec.js" timestamp="2026-09-23T16:50:05.417Z" hostname="chromium" tests="1" failures="0" skipped="0" time="16.473" errors="0">
+<testcase name="Add to cart Scenario" classname="AddToCartScenario.spec.js" time="16.473">
+<system-out>
+<![CDATA[Total items found: 22
+Cart count after adding product: 1
+]]>
+</system-out>
+</testcase>
+</testsuite>
 </testsuites>
