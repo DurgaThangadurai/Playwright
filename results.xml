@@ -1,11 +1,35 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="17.715172">
-<testsuite name="AddToCartScenario.spec.js" timestamp="2026-09-23T16:50:05.417Z" hostname="chromium" tests="1" failures="0" skipped="0" time="16.473" errors="0">
-<testcase name="Add to cart Scenario" classname="AddToCartScenario.spec.js" time="16.473">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="1" time="32.216112">
+<testsuite name="amazonaddtocartlinear.spec.js" timestamp="2026-09-28T11:01:48.811Z" hostname="chromium" tests="1" failures="0" skipped="0" time="30.805" errors="1">
+<testcase name="amazon add to cart linear" classname="amazonaddtocartlinear.spec.js" time="30.805">
 <system-out>
-<![CDATA[Total items found: 22
-Cart count after adding product: 1
+<![CDATA[Total items found: 66
+Product title: Men's Sneakers Flo Mid Top | Stylish & Comfortable | Lace Up Casual Shoes for Man/Gents
+
+[[ATTACHMENT|test-results\amazonaddtocartlinear-amazon-add-to-cart-linear-chromium\error-context.md]]
 ]]>
 </system-out>
+<error message="Test timeout of 30000ms exceeded." type="Error">
+<![CDATA[  [chromium] › amazonaddtocartlinear.spec.js:3:5 › amazon add to cart linear ───────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('add-to-cart-button').nth(1)
+
+
+      38 | await newPage.waitForLoadState('domcontentloaded');
+      39 |
+    > 40 | await newPage.locator('add-to-cart-button').nth(1).click()
+         |                                                    ^
+      41 |
+      42 | await newPage.reload();
+      43 |
+        at C:\Playwright-main\tests\amazonaddtocartlinear.spec.js:40:52
+
+    Error Context: ..\test-results\amazonaddtocartlinear-amazon-add-to-cart-linear-chromium\error-context.md
+]]>
+</error>
 </testcase>
 </testsuite>
 </testsuites>

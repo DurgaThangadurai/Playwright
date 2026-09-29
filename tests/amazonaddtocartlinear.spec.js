@@ -4,36 +4,42 @@ test('amazon add to cart linear', async ({ page, context }) => {
 
    await page.goto('https://www.amazon.in//');
 
-    await page.locator('#twotabsearchtextbox').fill('laptop');
+    await page.locator('#twotabsearchtextbox').fill('shoes');
 
     await page.locator('#nav-search-submit-button').click(); 
 
    await page.waitForURL('**/s**')     
 
-  const item = page.locator("div[data-component-type='s-search-result']");
+  const item = page.locator('//div[@data-cy="asin-faceout-container"]');
 
   const count = await item.count();
 
     console.log('Total items found: ' + count);
 
-    await page.mouse.wheel(0, 1000);
+    //await page.mouse.wheel(0, 1000);
 
     await page.waitForTimeout(5000);
     
-    const product = await item.nth(0)
+    const product = await item.first()
+
+    const producttitle= await product.locator('h2').nth(1)
+
+    console.log('Product title: '+ await producttitle.innerText())
+    
+    await producttitle.scrollIntoViewIfNeeded()
 
     await page.waitForTimeout(5000);
 
     const [newPage] = await Promise.all([
     context.waitForEvent('page'),
-    product.locator('h2').click()
+    producttitle.click()    
 ]);
 
 await newPage.waitForLoadState('domcontentloaded');
 
-await newPage.getByRole('button', { name: 'Add to cart' }).first().click();
+await newPage.locator('add-to-cart-button').nth(1).click()
 
-await page.reload();
+await newPage.reload();
 
 const cartCount = await newPage.locator('#nav-cart-count').textContent();
 

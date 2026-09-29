@@ -6,14 +6,13 @@ import { cartToAdd } from '../pages/cartToAdd.js';
 
 test('Add to cart Scenario', async ({ page, context }) => {
 
-
     //Object creation
 
    const Prodsearch= new searchPage(page);
 
    const add = new cartToAdd(page,context)
 
-   //Values capturing
+   //Value capturing
 
    const url= 'https://www.amazon.in//'
 
